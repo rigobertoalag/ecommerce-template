@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {CardContainer, BtnSeeMore} from '../styles/Components'
 import {items} from '../products/items'
+import Modal from './Modal'
 
 const CardImage = styled.img`
 width: 100%;
@@ -24,6 +25,13 @@ margin: 5% 5%;
 `
 
 export default function Card({catId}){
+    const [showModal, setShowModal] = useState(false)
+    const [title, setTitle] = useState("")
+    const [img, setImg] = useState("")
+    const [description, setDescription] = useState("")
+    const [price, setPrice] = useState()
+
+
     const dItems = items.filter(items => items.category === catId);
     return(
         <>
@@ -34,7 +42,7 @@ export default function Card({catId}){
                         <CardImage src={item.img}></CardImage>
                         <CardTitle>{item.name}</CardTitle>
                         <CardDescription>{item.description}</CardDescription>
-                        <BtnSeeMore>VER MAS</BtnSeeMore>
+                        <BtnSeeMore onClick={()=> (setShowModal(true), setTitle(item.name), setImg(item.img), setDescription(item.description), setPrice(item.price))}>VER MAS</BtnSeeMore>
                     </CardContainer>
                 ))
             ):(
@@ -43,11 +51,19 @@ export default function Card({catId}){
                         <CardImage src={item.img}></CardImage>
                         <CardTitle>{item.name}</CardTitle>
                         <CardDescription>{item.description}</CardDescription>
-                        <BtnSeeMore>VER MAS</BtnSeeMore>
+                        <BtnSeeMore onClick={()=> (setShowModal(true), setTitle(item.name), setImg(item.img), setDescription(item.description), setPrice(item.price))}>VER MAS</BtnSeeMore>
                     </CardContainer>
                 ))
             )
         }
+        <Modal 
+            onClose={()=> setShowModal(false)} 
+            show={showModal} 
+            title={title}
+            img={img}
+            description={description}
+            price={price}
+        />
         </>
     )
 }
