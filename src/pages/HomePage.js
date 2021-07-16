@@ -3,7 +3,6 @@ import React from 'react'
 import Header from '../components/Header'
 import Carousel from '../components/Carousel'
 import HorizontalCategories from '../components/HorizontalCategories'
-import GridCardContainer from '../components/GridCardContainer'
 
 export default function HomePage(){
     return(
@@ -11,7 +10,6 @@ export default function HomePage(){
             <Header />
             <Carousel />
             <HorizontalCategories />
-            <GridCardContainer />
         </>
     )
 }

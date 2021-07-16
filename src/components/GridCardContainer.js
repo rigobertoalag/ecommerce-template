@@ -21,25 +21,21 @@ align-items: center;
     grid-template-columns: repeat(6, 1fr);
 }
 `
-
-export default function GridCardContainer(){
+export default function GridCardContainer({catId, catName}){ 
+    const setItemsByID = () =>{
+        if(catId){
+            console.log('es el id: ', catId)
+            return <Card catId={catId}></Card>
+        }else{
+            console.log('es el id: ', catId)
+            return <Card catId={0}></Card>
+        }
+    }
     return(
         <>
-        <h1>Todo</h1>
+        <h1>{catName}</h1>
         <Body>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            {/* <Card></Card>
-            <Card color='red'></Card>
-            <Card color='yellow'></Card>
-            <Card></Card>
-            <Card color='red'></Card>
-            <Card color='yellow'></Card>
-            <Card></Card>
-            <Card color='red'></Card>
-            <Card color='yellow'></Card> */}
+            {setItemsByID()}
         </Body>
         </>
     )
