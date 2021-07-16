@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { categories } from '../products/categories'
+import GridCardContainer from '../components/GridCardContainer'
 
 const Body = styled.div`
 background-color: lightgrey;
@@ -27,7 +29,7 @@ const CatCirlce = styled.div`
 height: 70px;
 width: 70px;
 border-radius: 100%;
-background-color: ${props => props.color ? props.color : "white"};
+background: ${props => props.color ? props.color : "white"};
 
 @media (min-width: 768px) {
     height: 100px;
@@ -42,39 +44,32 @@ color: black;
 margin-top: 2%;
 margin-bottom: 0;
 `
+const CatImg = styled.img`
+height: 60%;
+width: 60%;
+margin-top:1em;
+`
 
 export default function HorizontalCategories(){
+    const [catId, setCatId] = useState(0)
+    const [catName, setCatName] = useState("Todo")
     return(
+        <>
         <Body>
-            <ContainerCategories>
-                <CatCirlce color="lightgreen" />
-                <CatTitle>lightgreen</CatTitle>
-            </ContainerCategories>
-
-            <ContainerCategories>
-                <CatCirlce color="red" />
-                <CatTitle>red</CatTitle>
-            </ContainerCategories>
-
-            <ContainerCategories>
-                <CatCirlce color="purple" />
-                <CatTitle>purple</CatTitle>
-            </ContainerCategories>
-
-            <ContainerCategories>
-                <CatCirlce color="orange" />
-                <CatTitle>orange</CatTitle>
-            </ContainerCategories>
-
-            <ContainerCategories>
-                <CatCirlce color="lightyellow" />
-                <CatTitle>lightyellow</CatTitle>
-            </ContainerCategories>
-
-            <ContainerCategories>
-                <CatCirlce color="lightblue" />
-                <CatTitle>lightblue</CatTitle>
-            </ContainerCategories>
+            {
+                categories.map((cat) =>(
+                    <ContainerCategories key={cat.category_id} onClick={
+                        ()=> (setCatId(cat.category_id, setCatName(cat.nombre)))
+                    }>
+                        <CatCirlce color={cat.color}>
+                            <CatImg src={cat.image}></CatImg>
+                        </CatCirlce>
+                        <CatTitle>{cat.nombre}</CatTitle>
+                    </ContainerCategories>
+                ))
+            }
         </Body>
+        <GridCardContainer catId={catId} catName={catName}/>
+        </>
     )
 }

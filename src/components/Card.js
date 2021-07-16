@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import {CardContainer, BtnSeeMore} from '../styles/Components'
+import {items} from '../products/items'
 
-const CardImage = styled.div`
-background-color: white;
+const CardImage = styled.img`
 width: 100%;
 height: 90px;
 `
 const CardTitle = styled.h1`
-color: white;
+color: black;
 font-weight: bold;
 font-size: 20px;
 font-family: Helvetica, sans-serif;
@@ -16,20 +16,38 @@ text-align: left;
 margin: 1% 5%;
 `
 const CardDescription = styled.p`
-color: white;
+color: black;
 font-size: 10px;
 font-family: Helvetica, sans-serif;
 text-align: left;
 margin: 5% 5%;
 `
 
-export default function Card(){
+export default function Card({catId}){
+    const dItems = items.filter(items => items.category === catId);
     return(
-        <CardContainer>
-            <CardImage style={{color: 'black'}}>aqui va la img</CardImage>
-            <CardTitle>Aqui va el titulo</CardTitle>
-            <CardDescription>Esta es la descripcion ya con mas texto para describir el producto</CardDescription>
-            <BtnSeeMore>VER MAS</BtnSeeMore>
-        </CardContainer>
+        <>
+        {
+            catId === 0 ? (
+                items.map((item) => (
+                    <CardContainer key={item.id} cardColor="lightblue">
+                        <CardImage src={item.img}></CardImage>
+                        <CardTitle>{item.name}</CardTitle>
+                        <CardDescription>{item.description}</CardDescription>
+                        <BtnSeeMore>VER MAS</BtnSeeMore>
+                    </CardContainer>
+                ))
+            ):(
+                dItems.map((item) => (
+                    <CardContainer key={item.id} cardColor="lightblue">
+                        <CardImage src={item.img}></CardImage>
+                        <CardTitle>{item.name}</CardTitle>
+                        <CardDescription>{item.description}</CardDescription>
+                        <BtnSeeMore>VER MAS</BtnSeeMore>
+                    </CardContainer>
+                ))
+            )
+        }
+        </>
     )
 }
