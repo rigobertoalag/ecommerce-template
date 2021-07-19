@@ -5,7 +5,9 @@ export const items = [
         description: 'Esta es la descripcion del item 1',
         img: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg",
         category: 1,
-        price: 200
+        isOffer: true,
+        price: 200,
+        offer: 20,
     },
     {
         id: 2,
@@ -13,7 +15,9 @@ export const items = [
         description: 'Esta es la descripcion del item 2',
         img: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg",
         category: 1,
-        price: 100
+        isOffer: false,
+        price: 100,
+        offer: 0
     },
     {
         id: 3,
@@ -21,6 +25,8 @@ export const items = [
         description: 'Esta es la descripcion del item 3',
         img: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg",
         category: 2,
-        price: 50
+        isOffer: false,
+        price: 50,
+        offer: 0
     }
 ]

@@ -1,8 +1,14 @@
 export const categories = [
     {
-        category_id: 0,
+        category_id: 0, //Codigo para mostrar todos los prodcutos
         nombre: "Todo",
         color: "lightblue",
+        image: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg"
+    },
+    {
+        category_id: -1, //Codigo para las ofertas
+        nombre: "Ofertas",
+        color: "red",
         image: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg"
     },
     {

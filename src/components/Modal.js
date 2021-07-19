@@ -109,6 +109,7 @@ export default function Modal(props){
                 </ModalBody>
                 <ModalFooter>
                     <ModalPrice>Precio: ${props.price}</ModalPrice>
+                    {props.offer > 0 ? <p style={{color: 'black'}}>{(props.offer * props.price / 100) - props.price}</p>: <></>}
                     <InfoBtn onClick={props.onClose}>
                         PEDIR INFORMES
                         <LogoWhatsapp
