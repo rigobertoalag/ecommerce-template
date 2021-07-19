@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import AliceCarousel from 'react-alice-carousel'
+import "react-alice-carousel/lib/alice-carousel.css"
+import { carousel } from '../products/carousel'
 
-const Body = styled.div`
-background-color: gray;
-height: 200px;
+const SliderImg = styled.img`
 width: 100%;
+height: 200px;
+object-fit: cover;
 
 @media (min-width: 768px) {
     height: 250px;
@@ -15,9 +18,16 @@ width: 100%;
     width: 90%;
 }
 `
-
 export default function Carousel(){
     return(
-        <Body></Body>
+        <>
+        <AliceCarousel autoPlay autoPlayInterval="3000" disableButtonsControls>
+            {
+                carousel.map((caimg) =>(
+                    <SliderImg src={caimg.img} key={caimg.id}/>
+                ))
+            }
+        </AliceCarousel>
+        </>
     )
 }
