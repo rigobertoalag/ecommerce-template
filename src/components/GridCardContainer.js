@@ -21,19 +21,24 @@ align-items: center;
     grid-template-columns: repeat(6, 1fr);
 }
 `
+const CatTitle = styled.h1`
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+font-size: xx-large;
+margin-bottom: 1em;
+padding-left: .5em;
+`
 export default function GridCardContainer({catId, catName}){ 
     const setItemsByID = () =>{
         if(catId){
-            console.log('es el id: ', catId)
             return <Card catId={catId}></Card>
         }else{
-            console.log('es el id: ', catId)
             return <Card catId={0}></Card>
         }
     }
     return(
         <>
-        <h1>{catName}</h1>
+        <CatTitle>{catName}</CatTitle>
         <Body>
             {setItemsByID()}
         </Body>
