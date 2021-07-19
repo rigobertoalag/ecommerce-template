@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { BagCheck } from 'react-ionicons'
 
 const HBody = styled.div`
 background-color: black;
@@ -18,14 +19,12 @@ width: 100%;
 }
 `
 const Logo = styled.div`
-color: white;
-font-size: 30px;
-left: 50%;
-margin-left: -50px;
+left: 47%;
 top:0;
-margin-top: 3%;
-text-align: center;
 position: absolute;
+height: 10%;
+width: 10%;
+margin: auto;
 
 @media (min-width: 768px) {
     top:0;
@@ -62,8 +61,15 @@ export default function Header(){
     return(
         <>
         <HBody>
-            <Logo>LOGO </Logo>
-            <ShoppingCart>C</ShoppingCart>
+            <Logo>
+                <BagCheck
+                color={'#FFF'} 
+                title={''}
+                height="100%"
+                width="100%"
+                />
+            </Logo>
+            {/* <ShoppingCart>C</ShoppingCart> */} {/* quitar cometario para implementar el shopping cart */}
         </HBody>        
         </>
     )

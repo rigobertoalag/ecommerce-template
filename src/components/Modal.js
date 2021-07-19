@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
+import { Close, LogoWhatsapp } from 'react-ionicons'
 
 const ModalContainer = styled.div`
 position: fixed;
@@ -45,6 +46,8 @@ height: 50px;
 background-color: #1dd80d;
 color:white;
 font-size: large;
+display: inline-block;
+
 `
 const ModalImage = styled.img`
 width: 100%;
@@ -53,7 +56,7 @@ background-color: grey;
 border-bottom-left-radius: 5%;
 border-bottom-right-radius: 5%;
 `
-const CloseBtn = styled.button`
+const CloseBtn = styled.div`
 position: absolute;
 top: 0;
 margin-top: 10%;
@@ -88,7 +91,14 @@ export default function Modal(props){
 
     return(
         <ModalContainer onClick={props.onClose}>
-            <CloseBtn onClick={props.onClose}>X</CloseBtn>
+            <CloseBtn onClick={props.onClose}>
+                <Close
+                color={'#fff'} 
+                title={'close'}
+                height="100%"
+                width="100%"
+                />
+            </CloseBtn>
             <ModalContent onClick={e => e.stopPropagation()}>
                 <ModalImage src={props.img}></ModalImage>
                 <ModalHeader>
@@ -99,7 +109,16 @@ export default function Modal(props){
                 </ModalBody>
                 <ModalFooter>
                     <ModalPrice>Precio: ${props.price}</ModalPrice>
-                    <InfoBtn onClick={props.onClose}>PEDIR INFORMES</InfoBtn>
+                    <InfoBtn onClick={props.onClose}>
+                        PEDIR INFORMES
+                        <LogoWhatsapp
+                        color={'#fff'} 
+                        shake 
+                        title={'info'}
+                        height="50%"
+                        width="50%"
+                        />
+                    </InfoBtn>
                 </ModalFooter>
             </ModalContent>
         </ModalContainer>
