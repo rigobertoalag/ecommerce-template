@@ -11,7 +11,7 @@ margin-bottom: 3em;
 `
 export const BtnSeeMore = styled.button`
 width: 50%;
-height: 20%;
+height: 15%;
 background-color: blueviolet;
 color: white;
 border-radius: 10px;
