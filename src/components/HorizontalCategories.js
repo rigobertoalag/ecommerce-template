@@ -64,7 +64,7 @@ export default function HorizontalCategories(){
                         <CatCirlce color={cat.color}>
                             <CatImg src={cat.image}></CatImg>
                         </CatCirlce>
-                        <CatTitle>{cat.nombre}</CatTitle>
+                        <CatTitle>{cat.nombre.slice(0, 11) + (cat.nombre.length > 11 ? "..." : "")}</CatTitle>
                     </ContainerCategories>
                 ))
             }

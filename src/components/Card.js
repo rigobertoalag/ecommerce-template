@@ -53,8 +53,8 @@ export default function Card({catId}){
             return items.map((item) => (
                     <CardContainer key={item.id} cardColor="lightblue">
                         <CardImage src={item.img}></CardImage>
-                        <CardTitle>{item.name}</CardTitle>
-                        <CardDescription>{item.description}</CardDescription>
+                        <CardTitle>{item.name.slice(0, 20) + (item.name.length > 20 ? "..." : "")}</CardTitle>
+                        <CardDescription>{item.description.slice(0, 70) + (item.description.length > 70 ? "..." : "")}</CardDescription>
                         {item.offer > 0 ? (<OfferLabel>Descuento {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                         <BtnSeeMore onClick={
                             ()=> (
@@ -63,7 +63,8 @@ export default function Card({catId}){
                                 setImg(item.img), 
                                 setDescription(item.description), 
                                 setPrice(item.price),
-                                setOffer(offerDiscount(item.offer, item.price))
+                                setOffer(item.offer),
+                                setOfferPercent(offerDiscount(item.offer, item.price))
                                 )
                             }>VER MAS</BtnSeeMore>
                     </CardContainer>
@@ -73,20 +74,40 @@ export default function Card({catId}){
             return offerItems.map((item) => (
                 <CardContainer key={item.id} cardColor="lightblue">
                     <CardImage src={item.img}></CardImage>
-                    <CardTitle>{item.name}</CardTitle>
-                    <CardDescription>{item.description}</CardDescription>
-                    {item.offer > 0 ? (<OfferLabel>{offerDiscount(item.offer, item.price)}</OfferLabel>) : <></>}
-                    <BtnSeeMore onClick={()=> (setShowModal(true), setTitle(item.name), setImg(item.img), setDescription(item.description), setPrice(item.price))}>VER MAS</BtnSeeMore>
+                    <CardTitle>{item.name.slice(0, 20) + (item.name.length > 20 ? "..." : "")}</CardTitle>
+                    <CardDescription>{item.description.slice(0, 70) + (item.description.length > 70 ? "..." : "")}</CardDescription>
+                    {item.offer > 0 ? (<OfferLabel>Descuento {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
+                    <BtnSeeMore onClick={
+                            ()=> (
+                                setShowModal(true), 
+                                setTitle(item.name), 
+                                setImg(item.img), 
+                                setDescription(item.description), 
+                                setPrice(item.price),
+                                setOffer(item.offer),
+                                setOfferPercent(offerDiscount(item.offer, item.price))
+                                )
+                            }>VER MAS</BtnSeeMore>
                 </CardContainer>
             ))
         }else{
             return dItems.map((item) => (
                 <CardContainer key={item.id} cardColor="lightblue">
                     <CardImage src={item.img}></CardImage>
-                    <CardTitle>{item.name}</CardTitle>
-                    <CardDescription>{item.description}</CardDescription>
-                    {item.offer > 0 ? (offerDiscount(item.offer, item.price)) : <></>}
-                    <BtnSeeMore onClick={()=> (setShowModal(true), setTitle(item.name), setImg(item.img), setDescription(item.description), setPrice(item.price))}>VER MAS</BtnSeeMore>
+                    <CardTitle>{item.name.slice(0, 20) + (item.name.length > 20 ? "..." : "")}</CardTitle>
+                    <CardDescription>{item.description.slice(0, 70) + (item.description.length > 70 ? "..." : "")}</CardDescription>
+                    {item.offer > 0 ? (<OfferLabel>Descuento {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
+                    <BtnSeeMore onClick={
+                            ()=> (
+                                setShowModal(true), 
+                                setTitle(item.name), 
+                                setImg(item.img), 
+                                setDescription(item.description), 
+                                setPrice(item.price),
+                                setOffer(item.offer),
+                                setOfferPercent(offerDiscount(item.offer, item.price))
+                                )
+                            }>VER MAS</BtnSeeMore>
                 </CardContainer>
             ))
         }
@@ -95,11 +116,6 @@ export default function Card({catId}){
     const offerDiscount = (offer, price) =>{
         const discount = (offer * 100) / price
         return discount
-        // return(
-        //     <>
-        //     <OfferLabel>Descuento {discount}%</OfferLabel>
-        //     </>
-        //     )
     }
 
     return(
@@ -113,6 +129,7 @@ export default function Card({catId}){
             description={description}
             offer={offer}
             price={price}
+            offerPercent={offerPercent}
         />
         </>
     )

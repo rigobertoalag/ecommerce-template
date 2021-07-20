@@ -71,6 +71,30 @@ font-weight: bolder;
 padding: 5%;
 border-bottom: 1px solid #eee;
 `
+const ModalOffer = styled.h1`
+font-size: x-large;
+font-weight: bolder;
+padding-left: 5%;
+color: crimson;
+`
+const ModalPriceDisable = styled.h1`
+font-size: large;
+font-weight: bold;
+color: grey;
+padding-left: 5%;
+text-decoration: line-through;
+border-bottom: 1px solid #eee;
+`
+const ModalOfferDiscount = styled.span`
+background-color: crimson;
+color: white;
+text-align: center;
+font-size: small;
+padding: 0.5em;
+border-radius: 10px;
+margin-left: 1%;
+margin-top: 0;
+`
 
 export default function Modal(props){
     const closeOnEscapeKeyDown = (e) => {
@@ -108,8 +132,16 @@ export default function Modal(props){
                     {props.description}
                 </ModalBody>
                 <ModalFooter>
-                    <ModalPrice>Precio: ${props.price}</ModalPrice>
-                    {props.offer > 0 ? <p style={{color: 'black'}}>{(props.offer * props.price / 100) - props.price}</p>: <></>}
+                    {
+                        props.offer > 0 ? (
+                            <>
+                            <ModalOffer>Rebaja: ${props.price - props.offer} <ModalOfferDiscount>{props.offerPercent}%</ModalOfferDiscount></ModalOffer>
+                            <ModalPriceDisable>Precio: ${props.price}</ModalPriceDisable>
+                            </>
+                        ) : (
+                            <ModalPrice>Precio: ${props.price}</ModalPrice>
+                        )
+                    }
                     <InfoBtn onClick={props.onClose}>
                         PEDIR INFORMES
                         <LogoWhatsapp

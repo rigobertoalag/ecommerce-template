@@ -38,7 +38,7 @@ export default function GridCardContainer({catId, catName}){
     }
     return(
         <>
-        <CatTitle>{catName}</CatTitle>
+        <CatTitle>{catName.slice(0, 40) + (catName.length > 40 ? "..." : "")}</CatTitle>
         <Body>
             {setItemsByID()}
         </Body>
