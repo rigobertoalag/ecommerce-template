@@ -55,6 +55,7 @@ height: 45%;
 background-color: grey;
 border-bottom-left-radius: 5%;
 border-bottom-right-radius: 5%;
+box-shadow: 5px 32px 50px -28px rgba(0,0,0,0.20);
 `
 const CloseBtn = styled.div`
 position: absolute;

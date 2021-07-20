@@ -28,5 +28,15 @@ export const items = [
         isOffer: true,
         price: 80,
         offer: 10
+    },
+    {
+        id: 4,
+        name: 'Cafe Americano doble con chispas de chocolate',
+        description: 'Clasico cafe americano con chispas de chocolate en la parte superior.',
+        img: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg",
+        category: 3,
+        isOffer: false,
+        price: 50,
+        offer: 0
     }
 ]

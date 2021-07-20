@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { categories } from '../products/categories'
 import GridCardContainer from '../components/GridCardContainer'
+import { HomeSharp, PricetagsSharp } from 'react-ionicons'
 
 const Body = styled.div`
 background-color: lightgrey;
@@ -30,6 +31,7 @@ height: 70px;
 width: 70px;
 border-radius: 100%;
 background: ${props => props.color ? props.color : "white"};
+box-shadow: 5px 5px 28px -11px rgba(0,0,0,0.5);
 
 @media (min-width: 768px) {
     height: 100px;
@@ -38,7 +40,7 @@ background: ${props => props.color ? props.color : "white"};
 `
 const CatTitle = styled.h3`
 font-size: medium;
-font-weight: normal;
+font-weight: 500;
 font-family: Arial, Helvetica, sans-serif;
 color: black;
 margin-top: 2%;
@@ -53,6 +55,15 @@ margin-top:1em;
 export default function HorizontalCategories(){
     const [catId, setCatId] = useState(0)
     const [catName, setCatName] = useState("Todo")
+
+    const logoToShow = (catId) =>{
+        if (catId === 0){
+            return <HomeSharp color={'#00000'} title={'home'} height='60%' width='60%' style={{marginTop: '1em'}} />
+        }else if(catId === -1){
+            return <PricetagsSharp color={'#fff'} title={'offer'} height='60%' width='60%' style={{marginTop: '1em'}} />
+        }
+    }
+
     return(
         <>
         <Body>
@@ -62,7 +73,9 @@ export default function HorizontalCategories(){
                         ()=> (setCatId(cat.category_id, setCatName(cat.nombre)))
                     }>
                         <CatCirlce color={cat.color}>
-                            <CatImg src={cat.image}></CatImg>
+                            {/* {cat.category_id === 0 ? (<HomeSharp color={'#00000'} title={'static'} height='60%' width='60%' style={{marginTop: '1em'}} />):(<CatImg src={cat.image}></CatImg>)} */}
+                            {cat.category_id === 0 || cat.category_id === -1 ? logoToShow(cat.category_id) : <CatImg src={cat.image}></CatImg>}
+                            {/* <CatImg src={cat.image}></CatImg> */}
                         </CatCirlce>
                         <CatTitle>{cat.nombre.slice(0, 11) + (cat.nombre.length > 11 ? "..." : "")}</CatTitle>
                     </ContainerCategories>
