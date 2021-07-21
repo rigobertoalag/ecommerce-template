@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { BagCheck } from 'react-ionicons'
+import { globalStyles } from '../stylesConfig'
 
 const HBody = styled.div`
-background-color: black;
-color: white;
+background: ${globalStyles.header};
 margin: auto;
 width: 100%;
 
@@ -62,12 +62,7 @@ export default function Header(){
         <>
         <HBody>
             <Logo>
-                <BagCheck
-                color={'#FFF'} 
-                title={''}
-                height="100%"
-                width="100%"
-                />
+                <BagCheck color={globalStyles.HLogo} title={''} height="100%" width="100%" />
             </Logo>
             {/* <ShoppingCart>C</ShoppingCart> */} {/* quitar cometario para implementar el shopping cart */}
         </HBody>        
