@@ -73,9 +73,7 @@ export default function HorizontalCategories(){
                         ()=> (setCatId(cat.category_id, setCatName(cat.nombre)))
                     }>
                         <CatCirlce color={cat.color}>
-                            {/* {cat.category_id === 0 ? (<HomeSharp color={'#00000'} title={'static'} height='60%' width='60%' style={{marginTop: '1em'}} />):(<CatImg src={cat.image}></CatImg>)} */}
                             {cat.category_id === 0 || cat.category_id === -1 ? logoToShow(cat.category_id) : <CatImg src={cat.image}></CatImg>}
-                            {/* <CatImg src={cat.image}></CatImg> */}
                         </CatCirlce>
                         <CatTitle>{cat.nombre.slice(0, 11) + (cat.nombre.length > 11 ? "..." : "")}</CatTitle>
                     </ContainerCategories>
