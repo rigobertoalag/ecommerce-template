@@ -15,14 +15,16 @@ font-weight: bold;
 font-size: 20px;
 font-family: Helvetica, sans-serif;
 text-align: left;
-margin: 1% 5%;
+margin: 2% 5%;
+height: 50px;
 `
 const CardDescription = styled.p`
 color: black;
 font-size: 10px;
 font-family: Helvetica, sans-serif;
 text-align: left;
-margin: 5% 5%;
+margin: 0 5%;
+height: 40px;
 `
 const OfferLabel = styled.p`
 background: ${globalStyles.OfferLabel};

@@ -21,7 +21,7 @@ white-space: nowrap;
 const ContainerCategories = styled.div`
 display: inline-block;
 text-align: center;
-margin: 10px 2% 0;
+margin: 10px 1% 0 3%;
 
 @media (min-width: 1024px) {
     margin: 10px 1%;
@@ -33,6 +33,7 @@ width: 70px;
 border-radius: 100%;
 background: ${props => props.color ? props.color : "white"};
 box-shadow: 5px 5px 28px -11px rgba(0,0,0,0.5);
+margin: auto;
 
 @media (min-width: 768px) {
     height: 100px;
@@ -44,7 +45,7 @@ font-size: medium;
 font-weight: 500;
 font-family: Arial, Helvetica, sans-serif;
 color: black;
-margin-top: 2%;
+margin-top: 0.4em;
 margin-bottom: 0;
 `
 const CatImg = styled.img`
