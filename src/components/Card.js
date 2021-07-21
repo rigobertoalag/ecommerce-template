@@ -12,19 +12,19 @@ height: 90px;
 const CardTitle = styled.h1`
 color: black;
 font-weight: bold;
-font-size: 20px;
+font-size: large;
 font-family: Helvetica, sans-serif;
 text-align: left;
-margin: 2% 5%;
+margin: 1% 5%;
 height: 50px;
 `
 const CardDescription = styled.p`
 color: black;
-font-size: 10px;
+font-size: small;
 font-family: Helvetica, sans-serif;
 text-align: left;
 margin: 0 5%;
-height: 40px;
+height: 60px;
 `
 const OfferLabel = styled.p`
 background: ${globalStyles.OfferLabel};
@@ -56,7 +56,7 @@ export default function Card({catId}){
                     <CardContainer key={item.id} cardColor="lightblue">
                         <CardImage src={item.img}></CardImage>
                         {item.offer > 0 ? (<OfferLabel>Oferta {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
-                        <CardTitle>{item.name.slice(0, 20) + (item.name.length > 20 ? "..." : "")}</CardTitle>
+                        <CardTitle>{item.name.slice(0, 30) + (item.name.length > 30 ? "..." : "")}</CardTitle>
                         <CardDescription>{item.description.slice(0, 70) + (item.description.length > 70 ? "..." : "")}</CardDescription>
                         <BtnSeeMore onClick={
                             ()=> (
