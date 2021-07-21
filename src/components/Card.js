@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {CardContainer, BtnSeeMore} from '../styles/Components'
 import {items} from '../products/items'
 import Modal from './Modal'
+import { globalStyles } from '../stylesConfig'
 
 const CardImage = styled.img`
 width: 100%;
@@ -24,18 +25,17 @@ text-align: left;
 margin: 5% 5%;
 `
 const OfferLabel = styled.p`
-background-color: crimson;
-border-radius: 5px;
-text-align: center;
-width: 60%;
-padding: 5%;
+background: ${globalStyles.OfferLabel};
+width: 5.9em;
+padding: 0.4em;
 color: white;
 font-size: smaller;
 font-family: Helvetica, sans-serif;
-box-shadow: 1px 1px 1px black;
-margin-left: 5%;
+position: absolute;
+margin-top: -7em;
+margin-left: 0;
+text-align: center;
 `
-
 export default function Card({catId}){
     const [showModal, setShowModal] = useState(false)
     const [title, setTitle] = useState("")
@@ -53,9 +53,9 @@ export default function Card({catId}){
             return items.map((item) => (
                     <CardContainer key={item.id} cardColor="lightblue">
                         <CardImage src={item.img}></CardImage>
+                        {item.offer > 0 ? (<OfferLabel>Oferta {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                         <CardTitle>{item.name.slice(0, 20) + (item.name.length > 20 ? "..." : "")}</CardTitle>
                         <CardDescription>{item.description.slice(0, 70) + (item.description.length > 70 ? "..." : "")}</CardDescription>
-                        {item.offer > 0 ? (<OfferLabel>Descuento {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                         <BtnSeeMore onClick={
                             ()=> (
                                 setShowModal(true), 
@@ -74,9 +74,9 @@ export default function Card({catId}){
             return offerItems.map((item) => (
                 <CardContainer key={item.id} cardColor="lightblue">
                     <CardImage src={item.img}></CardImage>
+                    {item.offer > 0 ? (<OfferLabel>Oferta {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                     <CardTitle>{item.name.slice(0, 20) + (item.name.length > 20 ? "..." : "")}</CardTitle>
                     <CardDescription>{item.description.slice(0, 70) + (item.description.length > 70 ? "..." : "")}</CardDescription>
-                    {item.offer > 0 ? (<OfferLabel>Descuento {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                     <BtnSeeMore onClick={
                             ()=> (
                                 setShowModal(true), 
@@ -94,9 +94,9 @@ export default function Card({catId}){
             return dItems.map((item) => (
                 <CardContainer key={item.id} cardColor="lightblue">
                     <CardImage src={item.img}></CardImage>
+                    {item.offer > 0 ? (<OfferLabel>Oferta {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                     <CardTitle>{item.name.slice(0, 20) + (item.name.length > 20 ? "..." : "")}</CardTitle>
                     <CardDescription>{item.description.slice(0, 70) + (item.description.length > 70 ? "..." : "")}</CardDescription>
-                    {item.offer > 0 ? (<OfferLabel>Descuento {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                     <BtnSeeMore onClick={
                             ()=> (
                                 setShowModal(true), 

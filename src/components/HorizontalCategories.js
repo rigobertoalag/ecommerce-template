@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import { categories } from '../products/categories'
 import GridCardContainer from '../components/GridCardContainer'
 import { HomeSharp, PricetagsSharp } from 'react-ionicons'
+import { globalStyles } from '../stylesConfig'
 
 const Body = styled.div`
-background-color: lightgrey;
+background-color: ${globalStyles.HoriCatBody};
 margin-top: 5%;
 height: 110px;
 width: 100%;

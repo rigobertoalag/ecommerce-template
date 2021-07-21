@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { globalStyles } from '../stylesConfig'
 
 export const CardContainer = styled.div`
 height: 95%;
@@ -12,8 +13,9 @@ margin-bottom: 3em;
 export const BtnSeeMore = styled.button`
 width: 50%;
 height: 15%;
-background-color: blueviolet;
+background-color: ${globalStyles.BtnSeeMore};
 color: white;
 border-radius: 10px;
 margin-left: 5%;
+border: none;
 `
