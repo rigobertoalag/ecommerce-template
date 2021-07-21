@@ -59,7 +59,7 @@ export default function HorizontalCategories(){
 
     const logoToShow = (catId) =>{
         if (catId === 0){
-            return <HomeSharp color={'#00000'} title={'home'} height='60%' width='60%' style={{marginTop: '1em'}} />
+            return <HomeSharp color={'#fff'} title={'home'} height='60%' width='60%' style={{marginTop: '1em'}} />
         }else if(catId === -1){
             return <PricetagsSharp color={'#fff'} title={'offer'} height='60%' width='60%' style={{marginTop: '1em'}} />
         }
