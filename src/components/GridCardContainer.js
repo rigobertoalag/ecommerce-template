@@ -24,7 +24,7 @@ align-items: center;
 const CatTitle = styled.h1`
 color: black;
 font-family: Arial, Helvetica, sans-serif;
-font-size: xx-large;
+font-size: x-large;
 margin-bottom: 1em;
 padding-left: .5em;
 `
