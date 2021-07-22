@@ -20,19 +20,16 @@ width: 100%;
 `
 const Logo = styled.div`
 left: 47%;
-top:0;
+//
 position: absolute;
 height: 10%;
 width: 10%;
-margin: auto;
+margin: 0 auto;
 
 @media (min-width: 768px) {
-    top:0;
-    margin-top: 2%;
-}
-@media (min-width: 1024px) {
-    top:0;
-    margin-top: 2%;
+    margin-top: 0.5em;
+    height: 3em;
+    width: 3em;
 }
 `
 const ShoppingCart = styled.div`

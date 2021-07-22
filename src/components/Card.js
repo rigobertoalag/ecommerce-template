@@ -8,6 +8,10 @@ import { globalStyles } from '../stylesConfig'
 const CardImage = styled.img`
 width: 100%;
 height: 90px;
+
+@media (min-width: 768px) {
+    height: 150px;
+}
 `
 const CardTitle = styled.h1`
 color: black;
@@ -37,6 +41,13 @@ position: absolute;
 margin-top: -7em;
 margin-left: 0;
 text-align: center;
+
+@media (min-width: 768px) {
+    width: 7em;
+    padding: 0.7em;
+    font-size: small;
+    margin-top: -12em;
+}
 `
 export default function Card({catId}){
     const [showModal, setShowModal] = useState(false)
