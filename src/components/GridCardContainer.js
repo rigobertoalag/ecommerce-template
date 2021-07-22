@@ -25,7 +25,8 @@ const CatTitle = styled.h1`
 color: black;
 font-family: Arial, Helvetica, sans-serif;
 font-size: x-large;
-margin-bottom: 1em;
+margin:  0.5em 0.2em;
+/* margin-bottom: 1em; */
 padding-left: .5em;
 `
 export default function GridCardContainer({catId, catName}){ 
