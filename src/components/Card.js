@@ -53,7 +53,17 @@ export default function Card({catId}){
     const itemsByCategory = () =>{
         if(catId === 0){
             return items.map((item) => (
-                    <CardContainer key={item.id} cardColor="lightblue">
+                    <CardContainer key={item.id} cardColor="lightblue" onClick={
+                        ()=> (
+                            setShowModal(true), 
+                            setTitle(item.name), 
+                            setImg(item.img), 
+                            setDescription(item.description), 
+                            setPrice(item.price),
+                            setOffer(item.offer),
+                            setOfferPercent(offerDiscount(item.offer, item.price))
+                            )
+                        }>
                         <CardImage src={item.img}></CardImage>
                         {item.offer > 0 ? (<OfferLabel>Oferta {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                         <CardTitle>{item.name.slice(0, 30) + (item.name.length > 30 ? "..." : "")}</CardTitle>
@@ -74,7 +84,17 @@ export default function Card({catId}){
             
         }else if(catId === -1){
             return offerItems.map((item) => (
-                <CardContainer key={item.id} cardColor="lightblue">
+                <CardContainer key={item.id} cardColor="lightblue" onClick={
+                    ()=> (
+                        setShowModal(true), 
+                        setTitle(item.name), 
+                        setImg(item.img), 
+                        setDescription(item.description), 
+                        setPrice(item.price),
+                        setOffer(item.offer),
+                        setOfferPercent(offerDiscount(item.offer, item.price))
+                        )
+                    }>
                     <CardImage src={item.img}></CardImage>
                     {item.offer > 0 ? (<OfferLabel>Oferta {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                     <CardTitle>{item.name.slice(0, 20) + (item.name.length > 20 ? "..." : "")}</CardTitle>
@@ -94,7 +114,17 @@ export default function Card({catId}){
             ))
         }else{
             return dItems.map((item) => (
-                <CardContainer key={item.id} cardColor="lightblue">
+                <CardContainer key={item.id} cardColor="lightblue" onClick={
+                    ()=> (
+                        setShowModal(true), 
+                        setTitle(item.name), 
+                        setImg(item.img), 
+                        setDescription(item.description), 
+                        setPrice(item.price),
+                        setOffer(item.offer),
+                        setOfferPercent(offerDiscount(item.offer, item.price))
+                        )
+                    }>
                     <CardImage src={item.img}></CardImage>
                     {item.offer > 0 ? (<OfferLabel>Oferta {offerDiscount(item.offer, item.price)}%</OfferLabel>) : <></>}
                     <CardTitle>{item.name.slice(0, 20) + (item.name.length > 20 ? "..." : "")}</CardTitle>
