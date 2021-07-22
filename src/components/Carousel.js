@@ -27,8 +27,8 @@ export default function Carousel(){
             width: '95%',
             borderRadius: '15px',
             margin: 'auto',
-            marginTop: '0.5em',
-            paddingBottom: '2em'
+            marginTop: '1.5em',
+            paddingBottom: '2em',
         }}>
             <AliceCarousel autoPlay autoPlayInterval="3000" disableButtonsControls>
             {
