@@ -14,7 +14,7 @@ overflow:scroll;
 white-space: nowrap;
 
 @media (min-width: 768px) {
-    height: 140px;
+    height: 120px;
     margin: 1% auto;
 }
 `
@@ -22,10 +22,6 @@ const ContainerCategories = styled.div`
 display: inline-block;
 text-align: center;
 margin: 10px 1% 0 3%;
-
-@media (min-width: 1024px) {
-    margin: 10px 1%;
-}
 `
 const CatCirlce = styled.div`
 height: 70px;
@@ -36,8 +32,8 @@ box-shadow: 5px 5px 28px -11px rgba(0,0,0,0.5);
 margin: auto;
 
 @media (min-width: 768px) {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
 }
 `
 const CatTitle = styled.h3`
@@ -45,7 +41,7 @@ font-size: medium;
 font-weight: 500;
 font-family: Arial, Helvetica, sans-serif;
 color: black;
-margin-top: 0.4em;
+margin-top: 0.4em; 
 margin-bottom: 0;
 `
 const CatImg = styled.img`

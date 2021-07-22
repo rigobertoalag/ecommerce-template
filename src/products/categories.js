@@ -9,17 +9,17 @@ export const categories = [
         category_id: -1, //Codigo para las ofertas
         nombre: "Ofertas",
         color: "linear-gradient(to right, #d31027, #ea384d);",
-        image: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg"
+        image: ""
     },
     {
         category_id: 1,
         nombre: "Comida",
         color: "linear-gradient(to right, #2193b0, #6dd5ed);",
-        image: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg"
+        image: "https://w7.pngwing.com/pngs/97/122/png-transparent-meal-breakfast-computer-icons-food-plate-food-plate-breakfast.png"
     },
     {
         category_id: 2,
-        nombre: "Categoria 2",
+        nombre: "Postres",
         color: "linear-gradient(to right, #fc5c7d, #6a82fb);",
         image: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg"
     },

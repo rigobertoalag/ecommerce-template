@@ -20,6 +20,10 @@ width: 90%;
 height: 85%;
 margin-top: 10%;
 background-color: white;
+
+@media (min-width: 768px) {
+    margin-top: 2%;
+}
 `
 const ModalHeader = styled.div`
 padding: 10px;
@@ -32,7 +36,7 @@ font-weight: bold;
 `
 const ModalBody = styled.div`
 padding: 5%;
-font-size: large;
+font-size: larger;
 `
 const ModalFooter = styled.div`
 padding: 5%;
@@ -48,8 +52,11 @@ width: 300px;
 background-color: #1dd80d;
 color:white;
 font-size: large;
-/* display: inline-block; */
 border: none;
+
+@media (min-width: 768px) {
+    margin: 0 8em;
+}
 `
 const ModalImage = styled.img`
 width: 100%;
@@ -65,6 +72,12 @@ left: 0;
 margin-left: 5%;
 height: 5%;
 width: 10%;
+
+@media (min-width: 768px) {
+    margin-top: 2%;
+    height: 2.7em;
+    width: 2.7em;
+}
 `
 const ModalPrice = styled.h1`
 font-size: x-large;
