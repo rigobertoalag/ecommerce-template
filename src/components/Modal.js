@@ -23,15 +23,15 @@ background-color: white;
 `
 const ModalHeader = styled.div`
 padding: 10px;
+background: #efeff1;
 `
 const ModalTitle = styled.div`
 margin: 0;
 font-size: x-large;
+font-weight: bold;
 `
 const ModalBody = styled.div`
 padding: 5%;
-border-top: 1px solid #eee;
-border-bottom: 1px solid #eee;
 font-size: large;
 `
 const ModalFooter = styled.div`
@@ -39,22 +39,22 @@ padding: 5%;
 bottom: 5%;
 position: absolute;
 `
-const InfoBtn = styled.button`
-border-radius: 5%;
+const InfoBtn = styled.div`
+margin: auto;
+text-align: center;
+padding: 10px;
+border-radius: 10px;
 width: 300px;
-height: 50px;
 background-color: #1dd80d;
 color:white;
 font-size: large;
-display: inline-block;
-
+/* display: inline-block; */
+border: none;
 `
 const ModalImage = styled.img`
 width: 100%;
 height: 45%;
 background-color: grey;
-border-bottom-left-radius: 5%;
-border-bottom-right-radius: 5%;
 box-shadow: 5px 32px 50px -28px rgba(0,0,0,0.20);
 `
 const CloseBtn = styled.div`
@@ -69,20 +69,20 @@ width: 10%;
 const ModalPrice = styled.h1`
 font-size: x-large;
 font-weight: bolder;
-padding: 5%;
+padding: 5% 0 5%;
+border-top: 1px solid #eee;
 border-bottom: 1px solid #eee;
+margin-top: 0.5em;
 `
 const ModalOffer = styled.h1`
 font-size: x-large;
 font-weight: bolder;
-padding-left: 5%;
 color: crimson;
 `
 const ModalPriceDisable = styled.h1`
 font-size: large;
 font-weight: bold;
 color: grey;
-padding-left: 5%;
 text-decoration: line-through;
 border-bottom: 1px solid #eee;
 `
@@ -93,8 +93,9 @@ text-align: center;
 font-size: small;
 padding: 0.5em;
 border-radius: 10px;
-margin-left: 1%;
+margin-left: 1em;
 margin-top: 0;
+position: absolute;
 `
 
 export default function Modal(props){
@@ -125,10 +126,10 @@ export default function Modal(props){
                 />
             </CloseBtn>
             <ModalContent onClick={e => e.stopPropagation()}>
-                <ModalImage src={props.img}></ModalImage>
                 <ModalHeader>
                     <ModalTitle>{props.title}</ModalTitle>
                 </ModalHeader>
+                <ModalImage src={props.img}></ModalImage>
                 <ModalBody>
                     {props.description}
                 </ModalBody>
@@ -145,13 +146,15 @@ export default function Modal(props){
                     }
                     <InfoBtn onClick={props.onClose}>
                         PEDIR INFORMES
+                        <span style={{display: 'inline-block', marginLeft: '0.5em'}}>
                         <LogoWhatsapp
                         color={'#fff'} 
                         shake 
                         title={'info'}
-                        height="50%"
-                        width="50%"
+                        height="20px"
+                        width="20px"
                         />
+                        </span>
                     </InfoBtn>
                 </ModalFooter>
             </ModalContent>
