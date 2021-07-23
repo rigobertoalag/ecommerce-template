@@ -13,20 +13,20 @@ export const categories = [
     },
     {
         category_id: 1,
-        nombre: "Comida",
+        nombre: "Juguetes",
         color: "linear-gradient(to right, #2193b0, #6dd5ed);",
-        image: "https://w7.pngwing.com/pngs/97/122/png-transparent-meal-breakfast-computer-icons-food-plate-food-plate-breakfast.png"
+        image: "https://st3.depositphotos.com/12229170/32219/v/450/depositphotos_322195812-stock-illustration-rabbit-vibrator-glyph-icon-sex.jpg"
     },
     {
         category_id: 2,
-        nombre: "Postres",
+        nombre: "Lencería",
         color: "linear-gradient(to right, #fc5c7d, #6a82fb);",
-        image: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg"
+        image: "https://image.shutterstock.com/image-vector/sexy-lingerie-icon-vector-outline-260nw-1599224470.jpg"
     },
     {
         category_id: 3,
-        nombre: "Cafeteria",
+        nombre: "Lubricantes",
         color: "linear-gradient(to right, #c94b4b, #4b134f);",
-        image: "https://img1.freepng.es/20180531/lix/kisspng-esquites-mexican-cuisine-popcorn-elote-maize-elote-5b0f948c726852.1446337415277477244686.jpg"
+        image: "https://st2.depositphotos.com/2068621/5997/v/950/depositphotos_59975267-stock-illustration-condom-and-water-lubrication-icon.jpg"
     },
 ]

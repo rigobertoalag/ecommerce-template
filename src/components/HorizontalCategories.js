@@ -45,9 +45,10 @@ margin-top: 0.4em;
 margin-bottom: 0;
 `
 const CatImg = styled.img`
-height: 60%;
-width: 60%;
-margin-top:1em;
+height: 100%;
+width: 100%;
+border-radius: 100%;
+/* margin-top:1em; */
 `
 
 export default function HorizontalCategories(){
@@ -56,7 +57,8 @@ export default function HorizontalCategories(){
 
     const logoToShow = (catId) =>{
         if (catId === 0){
-            return <HomeSharp color={'#fff'} title={'home'} height='60%' width='60%' style={{marginTop: '1em'}} />
+            // return <HomeSharp color={'#fff'} title={'home'} height='60%' width='60%' style={{marginTop: '1em'}} />
+            return <CatImg src='https://scontent.fgdl5-3.fna.fbcdn.net/v/t39.30808-6/211474850_122214823409785_8240091634345521733_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=973b4a&_nc_ohc=BmkUi_CvD54AX80j3Rv&_nc_ht=scontent.fgdl5-3.fna&oh=27dba9ec3ca3fb7a213d3d869c5360f1&oe=61009811'></CatImg>
         }else if(catId === -1){
             return <PricetagsSharp color={'#fff'} title={'offer'} height='60%' width='60%' style={{marginTop: '1em'}} />
         }
@@ -72,6 +74,7 @@ export default function HorizontalCategories(){
                     }>
                         <CatCirlce color={cat.color}>
                             {cat.category_id === 0 || cat.category_id === -1 ? logoToShow(cat.category_id) : <CatImg src={cat.image}></CatImg>}
+                            
                         </CatCirlce>
                         <CatTitle>{cat.nombre.slice(0, 11) + (cat.nombre.length > 11 ? "..." : "")}</CatTitle>
                     </ContainerCategories>

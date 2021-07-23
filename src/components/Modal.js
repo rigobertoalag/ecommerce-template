@@ -157,7 +157,7 @@ export default function Modal(props){
                             <ModalPrice>Precio: ${props.price}</ModalPrice>
                         )
                     }
-                    <InfoBtn onClick={props.onClose}>
+                    <InfoBtn onClick={() => alert('Redireccion a WhatsApp para consultar sobre el pedido que selecciono el usuario')}>
                         PEDIR INFORMES
                         <span style={{display: 'inline-block', marginLeft: '0.5em'}}>
                         <LogoWhatsapp
